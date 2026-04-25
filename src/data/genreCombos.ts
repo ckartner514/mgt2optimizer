@@ -660,7 +660,7 @@ export const genreCombos: GenreCombo[] = [
   targetGroups: ["Teenagers", "Adults", "Seniors"],
   subGenres: [],
   designPriority: [50, 10, 10, 30],
-  designFocus: [7, 3, 7, 4, 2, 2, 7, 7],
+  designFocus: [7, 3, 7, 4, 3, 2, 7, 7],
   designDirection: [7, 0, 7],
 },
 

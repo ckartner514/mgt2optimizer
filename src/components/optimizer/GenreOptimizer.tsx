@@ -49,13 +49,15 @@ export default function GenreOptimizer({
 
   return (
     <section className="rounded-2xl bg-neutral-900/80 p-6 backdrop-blur border border-neutral-800 shadow-lg shadow-emerald-500/10">
-        <div className="mb-4 h-1 w-12 rounded bg-gradient-to-r from-emerald-500 to-green-400" />
-      <h2 className="bg-gradient-to-r from-emerald-400 to-green-500 bg-clip-text text-2xl font-semibold text-transparent">
-            Sub-Genre Optimizer
-            </h2>
-      <p className="mt-2 text-sm text-neutral-400">
-        Pick a main genre and optional secondary genre to get the recommended setup.
-      </p>
+  <div className="mb-5 h-1 w-12 rounded bg-gradient-to-r from-emerald-500 to-green-400" />
+
+  <h2 className="mb-1 bg-gradient-to-r from-emerald-400 to-green-500 bg-clip-text text-2xl font-semibold text-transparent">
+    Sub-Genre Optimizer
+  </h2>
+
+  <p className="mt-2 text-sm text-neutral-400">
+    Pick a main genre and optional secondary genre to get the recommended setup.
+  </p>
 
       <div className="mt-6 grid gap-4 md:grid-cols-2">
         <div>
@@ -68,7 +70,7 @@ export default function GenreOptimizer({
               onGenreChange(e.target.value);
               setGenre2("__base__");
             }}
-            className="w-full rounded-xl border border-neutral-700 bg-neutral-950 px-4 py-3 text-white outline-none"
+            className="w-full rounded-xl border border-neutral-700 bg-neutral-950 px-4 py-3 text-white outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
           >
             {genres.map((item) => (
               <option key={item} value={item}>
@@ -85,7 +87,7 @@ export default function GenreOptimizer({
           <select
             value={genre2}
             onChange={(e) => setGenre2(e.target.value)}
-            className="w-full rounded-xl border border-neutral-700 bg-neutral-950 px-4 py-3 text-white outline-none"
+            className="w-full rounded-xl border border-neutral-700 bg-neutral-950 px-4 py-3 text-white outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
           >
             <option value="__base__">Base / None</option>
             {secondaryGenres.map((item) => (

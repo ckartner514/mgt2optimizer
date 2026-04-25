@@ -42,17 +42,16 @@ export default function TopicFinder({ selectedGenre }: Props) {
 
   return (
     <section className="rounded-2xl bg-neutral-900/80 p-6 backdrop-blur border border-neutral-800 shadow-lg shadow-emerald-500/10">
-      
       {/* Accent bar */}
       <div className="mb-5 h-1 w-12 rounded bg-gradient-to-r from-emerald-500 to-green-400" />
 
       <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <h2 className="mb-1 bg-gradient-to-r from-emerald-400 to-green-500 bg-clip-text text-2xl font-semibold text-transparent">
-            Best Topics
+            Matching Topics
           </h2>
           <p className="mt-2 text-sm text-neutral-400">
-            Top matching themes for the selected main genre.
+            Compatible themes for the selected main genre.
           </p>
         </div>
 
@@ -64,7 +63,6 @@ export default function TopicFinder({ selectedGenre }: Props) {
       </div>
 
       <div className="mt-6 grid gap-4 md:grid-cols-2">
-        
         {/* Genre (disabled) */}
         <div>
           <label className="mb-2 block text-sm font-medium text-neutral-200">
@@ -102,24 +100,22 @@ export default function TopicFinder({ selectedGenre }: Props) {
       </div>
 
       <div className="mt-6 rounded-2xl border border-neutral-800 bg-neutral-950/60 p-5">
-        
         <div className="mb-4 flex items-center justify-between gap-4">
           <h3 className="text-sm font-semibold uppercase tracking-wide text-neutral-400">
-            Recommended topics
+            Matching topics
           </h3>
 
           {!showAll && remainingCount > 0 && (
             <span className="text-xs text-neutral-500">
-              Showing top {TOP_COUNT}
+              Showing {TOP_COUNT} matches
             </span>
           )}
         </div>
 
         {displayedTopics.length > 0 ? (
           <div className="flex flex-wrap gap-3">
-            {displayedTopics.map((topic, index) => {
+            {displayedTopics.map((topic) => {
               const isSelected = selectedTopic === topic;
-              const isTopPick = !search && index < 6;
 
               return (
                 <button
@@ -129,12 +125,9 @@ export default function TopicFinder({ selectedGenre }: Props) {
                     "rounded-full border px-3 py-1.5 text-sm transition",
                     isSelected
                       ? "border-emerald-500 bg-emerald-600 text-white shadow-md shadow-emerald-500/30"
-                      : isTopPick
-                      ? "border-emerald-400/40 bg-emerald-500/10 text-emerald-200 hover:bg-emerald-500/20"
                       : "border-neutral-700 bg-neutral-900 text-neutral-300 hover:border-neutral-500 hover:bg-neutral-800",
                   ].join(" ")}
                 >
-                  {isTopPick && "★ "}
                   {topic}
                 </button>
               );
@@ -154,7 +147,7 @@ export default function TopicFinder({ selectedGenre }: Props) {
             >
               {showAll
                 ? "Show fewer topics"
-                : `Show all ${filteredTopics.length} topics`}
+                : `Show all ${filteredTopics.length} matching topics`}
             </button>
           </div>
         )}
